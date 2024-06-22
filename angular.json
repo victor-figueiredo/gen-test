@@ -104,7 +104,6 @@
       }
     }
   },
-  "defaultProject": "gen-test",
   "cli": {
     "analytics": false
   }
