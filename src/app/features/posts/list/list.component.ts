@@ -2,6 +2,7 @@ import { Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
 import { EditDialogService } from "../services/edit-dialog.service";
 import { PostsService } from "src/app/shared/services/posts.service";
+import { filter } from "rxjs";
 
 @Component({
   selector: "app-list",
@@ -21,7 +22,7 @@ export class PostsListComponent {
   openEditDialog(id: number) {
     this.dialog
       .openDialog()
-      .pipe((answer) => answer)
+      .pipe(filter((answer) => answer))
       .subscribe(() => this.edit(id));
   }
 }
