@@ -1,0 +1,21 @@
+<mat-list dense class="listMargins">
+  @for (post of posts(); track post.id) {
+  <mat-list-item class="cardMargin">
+    <mat-card (click)="edit(post.id)">
+      <mat-card-title> Title: </mat-card-title>
+      <mat-card-content>
+        <div class="cardContentAlign">
+          {{ post.title }}
+          <button
+            mat-raised-button
+            (click)="openEditDialog(post.id)"
+            class="btnAlign"
+          >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </mat-list-item>
+  }
+</mat-list>

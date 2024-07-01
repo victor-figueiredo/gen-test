@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DataScreenComponent } from "./edit.component";
+import { EditPostComponent } from "./edit.component";
 
-describe("DataScreenComponent", () => {
-  let component: DataScreenComponent;
-  let fixture: ComponentFixture<DataScreenComponent>;
+describe("EditPostComponent", () => {
+  let component: EditPostComponent;
+  let fixture: ComponentFixture<EditPostComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DataScreenComponent],
+      declarations: [EditPostComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataScreenComponent);
+    fixture = TestBed.createComponent(EditPostComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
