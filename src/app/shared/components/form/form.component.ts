@@ -31,7 +31,9 @@ export class FormComponent {
     });
   }
 
-  revertChanges() {}
+  revertChanges() {
+    this.form.reset();
+  }
 
   onSubmit() {
     const post = this.form.value as Post;
