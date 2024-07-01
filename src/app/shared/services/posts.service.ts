@@ -24,4 +24,13 @@ export class PostsService {
   get(id: string) {
     return this._http.get<Post>(`${this._endPoint}/posts/${id}`);
   }
+
+  update(post: Post) {
+    const posts = this.posts();
+    const index = posts.findIndex((p) => p.id === post.id);
+    if (index !== -1) {
+      posts[index] = post;
+      this.posts.set(posts);
+    }
+  }
 }

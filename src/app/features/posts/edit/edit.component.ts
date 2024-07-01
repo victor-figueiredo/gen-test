@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Post } from "src/app/shared/interfaces/post.interface";
+import { PostsService } from "src/app/shared/services/posts.service";
 
 @Component({
   selector: "app-edit-post",
@@ -9,15 +9,12 @@ import { Post } from "src/app/shared/interfaces/post.interface";
   styleUrls: ["./edit.component.css"],
 })
 export class EditPostComponent {
-  constructor(private route: ActivatedRoute, private router: Router) {
-    console.log("post");
-    console.log(this.post);
-  }
   post: Post = inject(ActivatedRoute).snapshot.data["post"];
+  router = inject(Router);
+  postsService = inject(PostsService);
 
-  //  Alters (only locally) data recieved from given URL (that is coming through EditPostComponent)
   onSubmit(post: Post) {
-    // CHAMAR UM MÉTODO NO SERVICE PARA ALTERAR O POST NO ARRAY DE POST
+    this.postsService.update(post);
     this.router.navigateByUrl("/post-list");
   }
 }
