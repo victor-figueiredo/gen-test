@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { Router } from "@angular/router";
-import { PostsService } from "src/app/api/posts.service";
 import { EditDialogService } from "../services/edit-dialog.service";
+import { PostsService } from "src/app/shared/services/posts.service";
 
 @Component({
   selector: "app-list",

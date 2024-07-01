@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable, signal } from "@angular/core";
 import { environment } from "src/environments/environment";
-import { Post } from "../shared/interfaces/post.interface";
 import { tap } from "rxjs";
+import { Post } from "../interfaces/post.interface";
 
 @Injectable({ providedIn: "root" })
 export class PostsService {
