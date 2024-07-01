@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { DataScreenComponent } from './data-screen.component';
+import { DataScreenComponent } from "./edit.component";
 
-describe('DataScreenComponent', () => {
+describe("DataScreenComponent", () => {
   let component: DataScreenComponent;
   let fixture: ComponentFixture<DataScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DataScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [DataScreenComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('DataScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
