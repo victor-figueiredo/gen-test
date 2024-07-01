@@ -8,8 +8,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { HttpClientModule } from "@angular/common/http";
 
 // Components imports
-import { EditDialogComponent } from "./features/post/edit-dialog/edit-dialog.component";
-import { DataScreenComponent } from "./features/post/edit/edit.component";
+import { EditPostComponent } from "./features/posts/edit/edit.component";
 
 // Material Design imports below
 import { MatButtonModule } from "@angular/material/button";
@@ -24,16 +23,18 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { ThanksPageComponent } from "./features/thanks-page/thanks-page.component";
 import { WelcomePageComponent } from "./features/welcome-page/welcome-page.component";
-import { EditPostComponent } from "./features/post/list/list.component";
+import { PostsListComponent } from "./features/posts/list/list.component";
+import { FormComponent } from "./shared/components/form/form.component";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
+    PostsListComponent,
     EditPostComponent,
-    EditDialogComponent,
-    DataScreenComponent,
     WelcomePageComponent,
     ThanksPageComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +51,8 @@ import { EditPostComponent } from "./features/post/list/list.component";
     MatFormFieldModule,
     MatToolbarModule,
     MatSidenavModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
