@@ -1,15 +1,6 @@
 import { Component, EventEmitter, input, Output } from "@angular/core";
 import { Post } from "../../interfaces/post.interface";
-import {
-  FormControl,
-  FormGroup,
-  Validators,
-  ReactiveFormsModule,
-} from "@angular/forms";
-import { MatButtonModule } from "@angular/material/button";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatDividerModule } from "@angular/material/divider";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: "app-form",
@@ -18,13 +9,22 @@ import { MatDividerModule } from "@angular/material/divider";
 })
 export class FormComponent {
   post = input<Post | null>();
+
   @Output() done = new EventEmitter<Post>();
 
   form!: FormGroup;
 
   ngOnInit(): void {
     this.form = new FormGroup({
+      id: new FormControl<number>(this.post()?.id ?? 0, {
+        nonNullable: true,
+        validators: Validators.required,
+      }),
       title: new FormControl<string>(this.post()?.title ?? "", {
+        nonNullable: true,
+        validators: Validators.required,
+      }),
+      body: new FormControl<string>(this.post()?.body ?? "", {
         nonNullable: true,
         validators: Validators.required,
       }),
