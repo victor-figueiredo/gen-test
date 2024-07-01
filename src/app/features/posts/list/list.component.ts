@@ -18,7 +18,10 @@ export class PostsListComponent {
     this.router.navigate(["edit-post", id]);
   }
 
-  openEditDialog(itemData: any) {
-    this.dialog.openDialog();
+  openEditDialog(id: number) {
+    this.dialog
+      .openDialog()
+      .pipe((answer) => answer)
+      .subscribe(() => this.edit(id));
   }
 }

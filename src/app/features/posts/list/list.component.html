@@ -1,7 +1,6 @@
-<mat-list dense class="listMargins">
-  @for (post of posts(); track post.id) {
+<mat-list dense *ngFor="let post of posts()" class="listMargins">
   <mat-list-item class="cardMargin">
-    <mat-card (click)="edit(post.id)">
+    <mat-card>
       <mat-card-title> Title: </mat-card-title>
       <mat-card-content>
         <div class="cardContentAlign">
@@ -17,5 +16,4 @@
       </mat-card-content>
     </mat-card>
   </mat-list-item>
-  }
 </mat-list>

@@ -4,7 +4,7 @@ mat-card {
 }
 
 .cardMargin {
-  margin-bottom: 5em;
+  height: auto;
 }
 
 .listMargins {
